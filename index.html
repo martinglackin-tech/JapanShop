@@ -207,6 +207,22 @@
                             <p>Minimalist Lifestyle Goods</p>
                         </div>
                     </div>
+
+                    <div class="shop-card rounded-lg overflow-hidden cursor-pointer" onclick="showPage('auld')">
+                        <img src="auld-main.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/EAEAEA/4A4A4A?text=Image+Not+Found';" class="w-full h-56 object-cover" alt="Auld Lang Sun store front">
+                        <div class="p-6">
+                            <h2>Auld Lang Sun</h2>
+                            <p>Curated Vintage Clothing</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-card rounded-lg overflow-hidden cursor-pointer" onclick="showPage('ragla')">
+                        <img src="rag-main.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/EAEAEA/4A4A4A?text=Image+Not+Found';" class="w-full h-56 object-cover" alt="Ragla Magla store window with neon signs">
+                        <div class="p-6">
+                            <h2>Ragla Magla</h2>
+                            <p>Affordable Thrift Finds</p>
+                        </div>
+                    </div>
                 </div>
             </main>
         </div>
@@ -398,6 +414,54 @@
                             <div><h3 class="text-sm uppercase tracking-wider">Opening Hours</h3><p>11:00 AM – 7:00 PM</p></div>
                             <div><h3 class="text-sm uppercase tracking-wider">Address</h3><p>Daikanyama Plaza 1F, 24-7 Sarugaku-cho, Shibuya-ku, Tokyo, 150-0033, Japan</p></div>
                             <a href="https://www.google.com/maps/search/?api=1&query=MUJI+Daikanyama" target="_blank" class="btn-maps inline-block mt-4 py-3 px-5 rounded-lg text-center w-full">View on Google Maps</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="auld" class="page">
+             <button onclick="showPage('home')" class="btn-back mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Back to Shops
+            </button>
+            <div class="detail-card rounded-lg overflow-hidden fade-in">
+                <img src="auld-page.jpg" onerror="this.onerror=null;this.src='https://placehold.co/1200x600/EAEAEA/4A4A4A?text=Image+Not+Found';" class="w-full h-64 md:h-[500px] object-cover" alt="Interior of Auld Lang Sun with racks of vintage clothing">
+                 <div class="p-6 md:p-12">
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="md:col-span-2">
+                             <h1>Auld Lang Sun</h1>
+                             <p class="mt-4">A gem in the Shimokitazawa vintage scene, Auld Lang Sun offers a carefully curated selection of American and European vintage clothing. The store has a warm, inviting atmosphere and is known for its quality pieces, from classic band tees to unique patterned shirts.</p>
+                        </div>
+                        <div class="space-y-6">
+                            <h2>Details</h2>
+                            <div><h3 class="text-sm uppercase tracking-wider">Opening Hours</h3><p>12:00 PM – 8:00 PM</p></div>
+                            <div><h3 class="text-sm uppercase tracking-wider">Address</h3><p>2-33-5 Kitazawa, Setagaya-ku, Tokyo, Japan</p></div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Auld+Lang+Sun+Tokyo" target="_blank" class="btn-maps inline-block mt-4 py-3 px-5 rounded-lg text-center w-full">View on Google Maps</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="ragla" class="page">
+             <button onclick="showPage('home')" class="btn-back mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Back to Shops
+            </button>
+            <div class="detail-card rounded-lg overflow-hidden fade-in">
+                <img src="rag-page.jpg" onerror="this.onerror=null;this.src='https://placehold.co/1200x600/EAEAEA/4A4A4A?text=Image+Not+Found';" class="w-full h-64 md:h-[500px] object-cover" alt="Eclectic interior of Ragla Magla with vintage clothes and decor">
+                 <div class="p-6 md:p-12">
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="md:col-span-2">
+                             <h1>Ragla Magla</h1>
+                             <p class="mt-4">Ragla Magla is a staple for thrift shoppers in Shimokitazawa, famous for its incredibly affordable prices. The store is packed with a huge variety of used clothing and accessories, making it a perfect spot for treasure hunting and finding unique, budget-friendly pieces.</p>
+                        </div>
+                        <div class="space-y-6">
+                            <h2>Details</h2>
+                            <div><h3 class="text-sm uppercase tracking-wider">Opening Hours</h3><p>12:00 PM – 9:00 PM</p></div>
+                            <div><h3 class="text-sm uppercase tracking-wider">Address</h3><p>2 Chome-30-10 Kitazawa, Setagaya City, Tokyo 155-0031, Japan</p></div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Ragla+Magla+Shimokitazawa" target="_blank" class="btn-maps inline-block mt-4 py-3 px-5 rounded-lg text-center w-full">View on Google Maps</a>
                         </div>
                     </div>
                 </div>
