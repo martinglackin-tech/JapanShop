@@ -7,18 +7,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #F9F9F9;
-            --header-bg: #FFC700; /* Bold Yellow */
-            --card-bg: #FFFFFF;
-            --text-dark: #1A1A1A; 
-            --text-light: #666666;
-            --accent-color: #F85A40; /* Bold Red/Orange */
-            --accent-hover: #E94B30;
-            --border-color: #EAEAEA;
-            --title-color: #C46210; /* Burnt Orange */
+            --bg-color: #FFFFFF;
+            --text-dark: #2d3748; 
+            --text-light: #718096;
+            --border-color: #EDF2F7;
+            --accent-color: #4A5568;
+            --accent-hover: #2D3748;
         }
 
         body {
@@ -28,12 +25,13 @@
         }
 
         .page-title {
+            font-family: 'Noto Sans JP', sans-serif;
             font-weight: 900;
             font-size: 3.5rem;
             color: var(--text-dark);
-            letter-spacing: -0.05em;
+            letter-spacing: -0.03em;
         }
-        
+
         @media (min-width: 640px) {
             .page-title {
                 font-size: 5rem;
@@ -41,22 +39,29 @@
         }
         
         .shop-card {
-            background-color: var(--card-bg);
+            background-color: var(--bg-color);
             border: 1px solid var(--border-color);
             transition: all 0.3s ease;
             position: relative;
+            border-radius: 0.5rem;
+            overflow: hidden;
         }
 
         .shop-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            border-color: var(--accent-color);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(45,55,72,0.08);
+        }
+        
+        .card-accent {
+            height: 6px;
+            width: 100%;
         }
 
         .shop-card h2 {
+            font-family: 'Noto Sans JP', sans-serif;
             font-weight: 700;
             font-size: 1.5rem;
-            color: var(--title-color);
+            color: var(--text-dark);
         }
         
         .shop-card p {
@@ -78,23 +83,20 @@
             color: var(--accent-color);
         }
 
-        .detail-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-        }
-
         .detail-card h1 {
+             font-family: 'Noto Sans JP', sans-serif;
              font-weight: 900;
              font-size: 3.5rem;
              letter-spacing: -0.05em;
-             color: var(--title-color);
+             color: var(--text-dark);
         }
         
         .detail-card h2 {
+            font-family: 'Noto Sans JP', sans-serif;
             font-weight: 700;
             font-size: 1.25rem;
             color: var(--text-dark);
-            border-bottom: 2px solid var(--header-bg);
+            border-bottom: 2px solid;
             padding-bottom: 0.5rem;
             margin-bottom: 1rem;
         }
@@ -113,6 +115,7 @@
             background-color: var(--accent-color);
             color: white;
             font-weight: 500;
+            border-radius: 0.5rem;
             transition: background-color 0.3s;
         }
         .btn-maps:hover {
@@ -136,15 +139,16 @@
     <div id="app" class="container mx-auto p-4 sm:p-6 md:p-8">
 
         <!-- Landing Page -->
-        <div id="home" class="page active fade-in">
-            <header class="text-center py-16 mb-12 md:mb-16" style="background-color: var(--header-bg);">
-                <h1 class="page-title">ALEX & MARTIN SHOP JAPAN!</h1>
+        <div id="home" class="page active fade-in relative">
+            <header class="text-center py-24 mb-12 md:mb-16 relative">
+                <h1 class="page-title">Alex & Martin Shop Japan</h1>
             </header>
 
             <main>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Shop Cards -->
-                    <div class="shop-card rounded-lg overflow-hidden cursor-pointer" onclick="showPage('hinoya')">
+                    <div class="shop-card cursor-pointer" onclick="showPage('hinoya')">
+                        <div class="card-accent" style="background-color: #AEC6CF;"></div>
                         <img src="Hinoya-main.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/EAEAEA/4A4A4A?text=Image+Not+Found';" class="w-full h-56 object-cover" alt="Folded pair of Momotaro Jeans">
                         <div class="p-6">
                             <h2>HINOYA</h2>
@@ -152,7 +156,8 @@
                         </div>
                     </div>
 
-                    <div class="shop-card rounded-lg overflow-hidden cursor-pointer" onclick="showPage('kikuichi')">
+                    <div class="shop-card cursor-pointer" onclick="showPage('kikuichi')">
+                        <div class="card-accent" style="background-color: #D1D5DB;"></div>
                         <img src="kikuichi-main.webp" onerror="this.onerror=null;this.src='https://placehold.co/600x400/EAEAEA/4A4A4A?text=Image+Not+Found';" class="w-full h-56 object-cover" alt="Kikuichi knife">
                         <div class="p-6">
                             <h2>Kikuichi</h2>
@@ -160,7 +165,8 @@
                         </div>
                     </div>
 
-                    <div class="shop-card rounded-lg overflow-hidden cursor-pointer" onclick="showPage('don-quijote')">
+                    <div class="shop-card cursor-pointer" onclick="showPage('don-quijote')">
+                        <div class="card-accent" style="background-color: #A7C7E7;"></div>
                         <img src="donq-main.png" onerror="this.onerror=null;this.src='https://placehold.co/600x400/EAEAEA/4A4A4A?text=Image+Not+Found';" class="w-full h-56 object-cover" alt="Don Quijote mascot Donpen">
                         <div class="p-6">
                             <h2>Don Quijote</h2>
@@ -168,7 +174,8 @@
                         </div>
                     </div>
 
-                    <div class="shop-card rounded-lg overflow-hidden cursor-pointer" onclick="showPage('fujiya-camera')">
+                    <div class="shop-card cursor-pointer" onclick="showPage('fujiya-camera')">
+                        <div class="card-accent" style="background-color: #FDFD96;"></div>
                         <img src="fujiya-main.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/EAEAEA/4A4A4A?text=Image+Not+Found';" class="w-full h-56 object-cover" alt="Fujiya Camera store entrance in Nakano">
                         <div class="p-6">
                             <h2>Fujiya Camera</h2>
@@ -176,7 +183,8 @@
                         </div>
                     </div>
 
-                    <div class="shop-card rounded-lg overflow-hidden cursor-pointer" onclick="showPage('kitamura-camera')">
+                    <div class="shop-card cursor-pointer" onclick="showPage('kitamura-camera')">
+                        <div class="card-accent" style="background-color: #E3E1D9;"></div>
                         <img src="kitamura-main.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/EAEAEA/4A4A4A?text=Image+Not+Found';" class="w-full h-56 object-cover" alt="Interior aisle of Kitamura Camera store">
                         <div class="p-6">
                             <h2>Kitamura</h2>
@@ -184,7 +192,8 @@
                         </div>
                     </div>
 
-                    <div class="shop-card rounded-lg overflow-hidden cursor-pointer" onclick="showPage('nintendo')">
+                    <div class="shop-card cursor-pointer" onclick="showPage('nintendo')">
+                        <div class="card-accent" style="background-color: #FFB6C1;"></div>
                         <img src="nin-main.webp" onerror="this.onerror=null;this.src='https://placehold.co/600x400/EAEAEA/4A4A4A?text=Image+Not+Found';" class="w-full h-56 object-cover" alt="Exterior of Nintendo Store with character decals">
                         <div class="p-6">
                             <h2>Nintendo Osaka</h2>
@@ -192,7 +201,8 @@
                         </div>
                     </div>
                     
-                    <div class="shop-card rounded-lg overflow-hidden cursor-pointer" onclick="showPage('onitsuka')">
+                    <div class="shop-card cursor-pointer" onclick="showPage('onitsuka')">
+                        <div class="card-accent" style="background-color: #FDEE87;"></div>
                         <img src="tiger-main.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/EAEAEA/4A4A4A?text=Image+Not+Found';" class="w-full h-56 object-cover" alt="Onitsuka Tiger store front">
                         <div class="p-6">
                             <h2>Onitsuka Tiger</h2>
@@ -200,7 +210,8 @@
                         </div>
                     </div>
 
-                    <div class="shop-card rounded-lg overflow-hidden cursor-pointer" onclick="showPage('muji')">
+                    <div class="shop-card cursor-pointer" onclick="showPage('muji')">
+                        <div class="card-accent" style="background-color: #EAD8C8;"></div>
                         <img src="muji-main.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/EAEAEA/4A4A4A?text=Image+Not+Found';" class="w-full h-56 object-cover" alt="Glass storefront of MUJI Daikanyama">
                         <div class="p-6">
                             <h2>MUJI Daikanyama</h2>
@@ -208,7 +219,8 @@
                         </div>
                     </div>
 
-                    <div class="shop-card rounded-lg overflow-hidden cursor-pointer" onclick="showPage('auld')">
+                    <div class="shop-card cursor-pointer" onclick="showPage('auld')">
+                        <div class="card-accent" style="background-color: #D9C5B2;"></div>
                         <img src="auld-main.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/EAEAEA/4A4A4A?text=Image+Not+Found';" class="w-full h-56 object-cover" alt="Auld Lang Sun store front">
                         <div class="p-6">
                             <h2>Auld Lang Sun</h2>
@@ -216,11 +228,21 @@
                         </div>
                     </div>
 
-                    <div class="shop-card rounded-lg overflow-hidden cursor-pointer" onclick="showPage('ragla')">
+                    <div class="shop-card cursor-pointer" onclick="showPage('ragla')">
+                        <div class="card-accent" style="background-color: #FAD0E3;"></div>
                         <img src="rag-main.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/EAEAEA/4A4A4A?text=Image+Not+Found';" class="w-full h-56 object-cover" alt="Ragla Magla store window with neon signs">
                         <div class="p-6">
                             <h2>Ragla Magla</h2>
                             <p>Affordable Thrift Finds</p>
+                        </div>
+                    </div>
+                    
+                    <div class="shop-card cursor-pointer" onclick="showPage('itoya')">
+                        <div class="card-accent" style="background-color: #FFC0CB;"></div>
+                        <img src="itoya-main.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/EAEAEA/4A4A4A?text=Image+Not+Found';" class="w-full h-56 object-cover" alt="Interior of Itoya Ginza with displays of colorful pens">
+                        <div class="p-6">
+                            <h2>Itoya Ginza</h2>
+                            <p>Legendary Stationery Store</p>
                         </div>
                     </div>
                 </div>
@@ -242,7 +264,7 @@
                              <p class="mt-4">HINOYA is a legendary store in Ueno's Ameya Yokocho market, famous for its vast selection of high-quality Japanese denim and American casual wear. You can find iconic brands like Sugar Cane, Burgus Plus, and Buzz Rickson's. It's a must-visit for denim enthusiasts looking for authentic, durable pieces.</p>
                         </div>
                         <div class="space-y-6">
-                            <h2>Details</h2>
+                            <h2 style="border-color: #AEC6CF;">Details</h2>
                             <div><h3 class="text-sm uppercase tracking-wider">Opening Hours</h3><p>10:10 AM – 8:20 PM</p></div>
                             <div><h3 class="text-sm uppercase tracking-wider">Address</h3><p>6-10-14 Ueno, Taito-ku, Tokyo 110-0005, Japan</p></div>
                             <a href="https://www.google.com/maps/search/?api=1&query=HINOYA+Ueno+Tokyo" target="_blank" class="btn-maps inline-block mt-4 py-3 px-5 rounded-lg text-center w-full">View on Google Maps</a>
@@ -266,7 +288,7 @@
                              <p class="mt-4">With a history spanning over 750 years, Kikuichi began as a samurai sword smith. Today, they craft world-renowned kitchen knives. This is the place to find an exceptionally sharp and beautiful piece of Japanese craftsmanship, from santoku to gyuto knives. They also offer engraving services.</p>
                         </div>
                         <div class="space-y-6">
-                            <h2>Details</h2>
+                            <h2 style="border-color: #D1D5DB;">Details</h2>
                             <div><h3 class="text-sm uppercase tracking-wider">Opening Hours</h3><p>9:30 AM – 5:00 PM</p></div>
                             <div><h3 class="text-sm uppercase tracking-wider">Address</h3><p>488 Zoshicho, Nara, 630-8211, Japan</p></div>
                             <a href="https://www.google.com/maps/search/?api=1&query=Kikuichi+Monju+Shiro+Kanenaga+Main+Store+Nara" target="_blank" class="btn-maps inline-block mt-4 py-3 px-5 rounded-lg text-center w-full">View on Google Maps</a>
@@ -290,7 +312,7 @@
                              <p class="mt-4">A chaotic and thrilling mega discount store, "Donki" is an experience in itself. It sells everything imaginable: snacks, cosmetics, electronics, luggage, costumes, and luxury goods. The narrow, packed aisles are an adventure to navigate, and you're guaranteed to find unique souvenirs and great deals.</p>
                         </div>
                         <div class="space-y-6">
-                            <h2>Details</h2>
+                            <h2 style="border-color: #A7C7E7;">Details</h2>
                             <div><h3 class="text-sm uppercase tracking-wider">Opening Hours</h3><p>Open 24 hours</p></div>
                             <div><h3 class="text-sm uppercase tracking-wider">Address</h3><p>1-16-5 Kabukicho, Shinjuku-ku, Tokyo 160-0021, Japan</p></div>
                             <a href="https://www.google.com/maps/search/?api=1&query=Don+Quijote+Shinjuku+Kabukicho" target="_blank" class="btn-maps inline-block mt-4 py-3 px-5 rounded-lg text-center w-full">View on Google Maps</a>
@@ -314,7 +336,7 @@
                              <p class="mt-4">Located in Nakano Broadway, Fujiya Camera is a paradise for photographers. They offer a massive selection of new and used cameras, lenses, and accessories. Whether you're a beginner or a seasoned pro, you'll find an incredible range of gear from all major brands, often at excellent prices.</p>
                         </div>
                         <div class="space-y-6">
-                            <h2>Details</h2>
+                            <h2 style="border-color: #FDFD96;">Details</h2>
                             <div><h3 class="text-sm uppercase tracking-wider">Opening Hours</h3><p>10:00 AM – 8:30 PM</p></div>
                             <div><h3 class="text-sm uppercase tracking-wider">Address</h3><p>5-61-1 Nakano, Nakano-ku, Tokyo 164-0001, Japan</p></div>
                             <a href="https://www.google.com/maps/search/?api=1&query=Fujiya+Camera+Nakano" target="_blank" class="btn-maps inline-block mt-4 py-3 px-5 rounded-lg text-center w-full">View on Google Maps</a>
@@ -338,7 +360,7 @@
                              <p class="mt-4">This multi-story camera store in the heart of Shinjuku is an institution. It boasts an enormous inventory of new and used cameras, lenses, film, and accessories. It also features a Leica boutique, a repair center, and a gallery. It's a one-stop-shop for everything photography-related.</p>
                         </div>
                         <div class="space-y-6">
-                            <h2>Details</h2>
+                            <h2 style="border-color: #E3E1D9;">Details</h2>
                             <div><h3 class="text-sm uppercase tracking-wider">Opening Hours</h3><p>10:00 AM – 9:00 PM</p></div>
                             <div><h3 class="text-sm uppercase tracking-wider">Address</h3><p>3-26-14 Shinjuku, Shinjuku-ku, Tokyo 160-0022, Japan</p></div>
                             <a href="https://www.google.com/maps/search/?api=1&query=Shinjuku+Kitamura+Camera" target="_blank" class="btn-maps inline-block mt-4 py-3 px-5 rounded-lg text-center w-full">View on Google Maps</a>
@@ -362,7 +384,7 @@
                              <p class="mt-4">The official Nintendo store in Osaka is a vibrant hub for fans. Located in the Daimaru Umeda department store, it offers a huge range of exclusive merchandise, from clothing and plushies to stationery and homeware, featuring beloved characters from Super Mario, The Legend of Zelda, Splatoon, and Animal Crossing.</p>
                         </div>
                         <div class="space-y-6">
-                            <h2>Details</h2>
+                            <h2 style="border-color: #FFB6C1;">Details</h2>
                             <div><h3 class="text-sm uppercase tracking-wider">Opening Hours</h3><p>10:00 AM – 8:00 PM</p></div>
                             <div><h3 class="text-sm uppercase tracking-wider">Address</h3><p>Daimaru Umeda 13F, 3-1-1 Umeda, Kita Ward, Osaka, 530-0001, Japan</p></div>
                             <a href="https://www.google.com/maps/search/?api=1&query=Nintendo+OSAKA" target="_blank" class="btn-maps inline-block mt-4 py-3 px-5 rounded-lg text-center w-full">View on Google Maps</a>
@@ -386,7 +408,7 @@
                              <p class="mt-4">Onitsuka Tiger creates stylish sportswear that blends Japanese heritage with modern design. The Shinjuku East store is a multi-level paradise for sneakerheads, showcasing everything from their iconic MEXICO 66 sneakers to the premium, handcrafted "Nippon Made" series and apparel.</p>
                         </div>
                         <div class="space-y-6">
-                            <h2>Details</h2>
+                            <h2 style="border-color: #FDEE87;">Details</h2>
                             <div><h3 class="text-sm uppercase tracking-wider">Opening Hours</h3><p>11:00 AM – 8:00 PM</p></div>
                             <div><h3 class="text-sm uppercase tracking-wider">Address</h3><p>3-17-5 Shinjuku, Shinjuku-ku, Tokyo, 160-0022, Japan</p></div>
                             <a href="https://www.google.com/maps/search/?api=1&query=Onitsuka+Tiger+Shinjuku+East" target="_blank" class="btn-maps inline-block mt-4 py-3 px-5 rounded-lg text-center w-full">View on Google Maps</a>
@@ -410,7 +432,7 @@
                              <p class="mt-4">MUJI is the epitome of Japanese minimalism, offering a wide range of high-quality, no-brand goods. From clothing and stationery to home furnishings and food, everything is designed with a focus on simplicity and function. The Daikanyama store embodies this philosophy in a beautifully designed space.</p>
                         </div>
                         <div class="space-y-6">
-                            <h2>Details</h2>
+                            <h2 style="border-color: #EAD8C8;">Details</h2>
                             <div><h3 class="text-sm uppercase tracking-wider">Opening Hours</h3><p>11:00 AM – 7:00 PM</p></div>
                             <div><h3 class="text-sm uppercase tracking-wider">Address</h3><p>Daikanyama Plaza 1F, 24-7 Sarugaku-cho, Shibuya-ku, Tokyo, 150-0033, Japan</p></div>
                             <a href="https://www.google.com/maps/search/?api=1&query=MUJI+Daikanyama" target="_blank" class="btn-maps inline-block mt-4 py-3 px-5 rounded-lg text-center w-full">View on Google Maps</a>
@@ -434,7 +456,7 @@
                              <p class="mt-4">A gem in the Shimokitazawa vintage scene, Auld Lang Sun offers a carefully curated selection of American and European vintage clothing. The store has a warm, inviting atmosphere and is known for its quality pieces, from classic band tees to unique patterned shirts.</p>
                         </div>
                         <div class="space-y-6">
-                            <h2>Details</h2>
+                            <h2 style="border-color: #D9C5B2;">Details</h2>
                             <div><h3 class="text-sm uppercase tracking-wider">Opening Hours</h3><p>12:00 PM – 8:00 PM</p></div>
                             <div><h3 class="text-sm uppercase tracking-wider">Address</h3><p>2-33-5 Kitazawa, Setagaya-ku, Tokyo, Japan</p></div>
                             <a href="https://www.google.com/maps/search/?api=1&query=Auld+Lang+Sun+Tokyo" target="_blank" class="btn-maps inline-block mt-4 py-3 px-5 rounded-lg text-center w-full">View on Google Maps</a>
@@ -458,10 +480,34 @@
                              <p class="mt-4">Ragla Magla is a staple for thrift shoppers in Shimokitazawa, famous for its incredibly affordable prices. The store is packed with a huge variety of used clothing and accessories, making it a perfect spot for treasure hunting and finding unique, budget-friendly pieces.</p>
                         </div>
                         <div class="space-y-6">
-                            <h2>Details</h2>
+                            <h2 style="border-color: #FAD0E3;">Details</h2>
                             <div><h3 class="text-sm uppercase tracking-wider">Opening Hours</h3><p>12:00 PM – 9:00 PM</p></div>
                             <div><h3 class="text-sm uppercase tracking-wider">Address</h3><p>2 Chome-30-10 Kitazawa, Setagaya City, Tokyo 155-0031, Japan</p></div>
                             <a href="https://www.google.com/maps/search/?api=1&query=Ragla+Magla+Shimokitazawa" target="_blank" class="btn-maps inline-block mt-4 py-3 px-5 rounded-lg text-center w-full">View on Google Maps</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="itoya" class="page">
+             <button onclick="showPage('home')" class="btn-back mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Back to Shops
+            </button>
+            <div class="detail-card rounded-lg overflow-hidden fade-in">
+                <img src="itoya-page.jpg" onerror="this.onerror=null;this.src='https://placehold.co/1200x600/EAEAEA/4A4A4A?text=Image+Not+Found';" class="w-full h-64 md:h-[500px] object-cover" alt="Interior of Itoya Ginza with a wall of colored paper">
+                 <div class="p-6 md:p-12">
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="md:col-span-2">
+                             <h1>Itoya Ginza</h1>
+                             <p class="mt-4">A paradise for stationery lovers, Itoya's flagship store in Ginza is a multi-story institution founded in 1904. Each floor has a different theme, offering everything from fine pens and paper to travel accessories and art supplies. It's a beautifully designed space that encourages creativity and exploration.</p>
+                        </div>
+                        <div class="space-y-6">
+                            <h2 style="border-color: #FFC0CB;">Details</h2>
+                            <div><h3 class="text-sm uppercase tracking-wider">Opening Hours</h3><p>10:00 AM – 8:00 PM (Mon-Sat)<br>10:00 AM - 7:00 PM (Sun & Hol)</p></div>
+                            <div><h3 class="text-sm uppercase tracking-wider">Address</h3><p>2-7-15 Ginza, Chuo-ku, Tokyo, 104-0061, Japan</p></div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Itoya+Ginza" target="_blank" class="btn-maps inline-block mt-4 py-3 px-5 rounded-lg text-center w-full">View on Google Maps</a>
                         </div>
                     </div>
                 </div>
